@@ -34,4 +34,33 @@ function objects(title, description, time, time_of_work, name, tag, data, id){
       check_box: 0,
       schedule: [0, 0, 0],
       plan_array: plan_array
-    }
+    },
+    methods: {
+        checkFull: function(name){
+          if(name != "" || name != " "){
+            this.uuid++
+            this.dif_id++
+            this.plan_array.push(objects('Задача ' + this.uuid, this.search, "", "", this.userName, "plan", "", 'Task ' + this.dif_id))
+            this.status = ''
+            this.sponsor = ''
+            this.start = ''
+            this.end = ''
+            this.shell()
+            this.userNameBoolevo = !this.userNameBoolevo
+          }
+        },
+        checkTextInInput: function(search){
+          if(search != '' || search != " "){
+            // this.windowVisibility = !this.windowVisibility
+            this.search = search
+            this.userNameBoolevo = !this.userNameBoolevo
+          }
+        },
+        reset_input: function(){
+          this.search =  '',
+          this.description = '',
+          this.status = '',
+          this.sponsor = '',
+          this.start = '',
+          this.end = ''
+        }

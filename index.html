@@ -35,6 +35,31 @@
                 </div>
             </div>
         </header>
+        <main>
+            <div class = "plan__content outline__block trans" v-bind:class = "{ 'dark__block': darkIsEnabled }">
+              <h3 class = "colored__h3">План ({{ schedule[0] }})</h3>
+              <ul
+              @drop='onDrop($event, "plan")' 
+              @dragover.prevent
+              @dragenter.prevent>
+                <li 
+                v-for='(item, index) in plan_array'
+                v-if = "item.tag == 'plan'"
+                v-bind:class = "{ 'dark__content': darkIsEnabled }" 
+                class = "trans" 
+                :key='item.description' 
+                draggable
+                @dragstart='startDrag($event, item)'>
+                  <h3 class = "bold lightblue__color">{{ item.title }}</h3>
+                  <p class = "another__color edit__font">{{ item.description }}</p>
+                  <div class = "sub__menu trans" v-bind:class = "{ 'dark-sub__menu': darkIsEnabled }">
+                    <i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" v-on:click = "edit_app_block(index)"></i>
+                    <i class="fa fa-check-circle-o fa-2x" aria-hidden="true" v-on:click = "ready_button(index)"></i>
+                  </div>
+                </li>
+              </ul>
+            </div>
+        </main>
     </div>
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>

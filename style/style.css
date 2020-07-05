@@ -110,3 +110,44 @@ input:checked[type = "checkbox"]:after{
     box-shadow: none;
     left: 60px;
 }
+
+main{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 5vw;
+    width: 80vw;
+}
+.colored__h3{
+    color: #7f7f7f;
+    font-size: 26px;
+}
+.outline__block{
+    display: flex;
+    padding-left: 25px;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 10px;
+    width: 220px;
+    min-height: 60vh;
+    border: 1.5px solid #7fc4fd;
+}
+  .outline__block > h3{
+    padding-top: 25px;
+}
+  .lightblue__color{
+    font-size: 24px !important;
+    color: #2699fb;
+}
+  .another__color{
+    color: #72bdfc;
+}
+  .bold{
+    font-weight: bold;
+    color: #2699fb;
+    font-size: 14px;
+}
+  .edit__font{
+    font-size: 12px;
+}

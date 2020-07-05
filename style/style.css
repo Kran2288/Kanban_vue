@@ -7,6 +7,13 @@
 body{
     width:90%;
 }
+#app{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+}
 header{
     display: flex;
   width: 100%;
@@ -49,4 +56,57 @@ header{
     padding: 7px;
     width: 200px;
     outline: none;
-  }
+}
+.switch-theme__button{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: -13vw;
+}
+.switch-theme__button > p{
+    margin-right: 15px;
+    margin-top: -7px;
+    color: #4aaeff;
+}
+input[type = "checkbox"]{
+    cursor: pointer;
+    position: relative;
+    width: 70px;
+    height: 40px;
+    -webkit-appearance: none;
+    outline: none;
+    border-radius: 20px;
+    background: black;
+}
+input:checked[type = "checkbox"]{
+    background: #2699fb;
+}
+input[type = "checkbox"]:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    background: lightgray;
+    border-radius: 20px;
+    transform: scale(.98,.96);
+    transition: .5s;
+}
+input:checked[type = "checkbox"]:before{
+    left: 30px;
+}
+input[type = "checkbox"]:after{
+    content: "";
+    position: absolute;
+    top: calc(50% - 2px);
+    left: 30px;
+    width: 4px;
+    height: 4px;
+    border-radius: 20px;
+    transition: .5s;
+}
+input:checked[type = "checkbox"]:after{
+    box-shadow: none;
+    left: 60px;
+}

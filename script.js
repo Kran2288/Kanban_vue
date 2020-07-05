@@ -63,4 +63,58 @@ function objects(title, description, time, time_of_work, name, tag, data, id){
           this.sponsor = '',
           this.start = '',
           this.end = ''
-        }
+        },
+        add_data_to_array: function(desc, status, sponsor, start, end){
+            if((status == 'plan' || status == 'in-work' || status == 'ended') && this.editable == false){
+                this.uuid++
+                this.plan_array.push(objects('Task ' + this.uuid, desc, start, end, this.userName, status, ""))
+                this.reset_input()
+                this.windowVisibility = !this.windowVisibility
+                this.shell()
+            }
+            else if((status == 'plan' || status == 'in-work' || status == 'ended') && this.editable == true){
+                      for(let i = 0; i < this.plan_array.length; i++){
+                        if(this.plan_array[i]["id"].includes(this.selected_id)){
+                          this.plan_array[i]["description"] = this.search
+                          this.plan_array[i]["time"] = this.start
+                          this.plan_array[i]["time_of_work"] = this.end
+                          this.plan_array[i]["name"] = this.sponsor
+                          this.plan_array[i]["tag"] = this.status
+                        }
+                      }
+                      this.windowVisibility = !this.windowVisibility
+                      this.reset_input()
+                      this.selected_id = 0
+                      this.editable = false
+                      this.shell()
+            }
+          },
+          edit_app_block: function(index){
+            for(let i = 0; i < this.plan_array.length; i++){
+              if(this.plan_array[i]["id"].includes(index + 1)){
+                if(this.plan_array[i]["tag"] == "plan"){
+                  this.boolevo[0] = true
+                  this.boolevo[1] = true
+                  this.boolevo[2] = false
+                }
+                else if(this.plan_array[i]["tag"] == "in-work"){
+                  this.boolevo[0] = false
+                  this.boolevo[1] = true
+                  this.boolevo[2] = false
+                }
+                else if(this.plan_array[i]["tag"] == "ended"){
+                  this.boolevo[0] = false
+                  this.boolevo[1] = false
+                  this.boolevo[2] = true
+                }
+                this.search =  this.plan_array[i]["description"],
+                this.status = this.plan_array[i]["tag"],
+                this.sponsor = this.plan_array[i]["name"],
+                this.start = this.plan_array[i]["time"],
+                this.end = this.plan_array[i]["time_of_work"]
+                this.editable = true
+                this.windowVisibility = !this.windowVisibility
+                this.selected_id = index + 1
+              }
+            }
+          },

@@ -59,6 +59,62 @@
                 </li>
               </ul>
             </div>
+            <div class = "in-work__content outline__block trans" v-bind:class = "{ 'dark__block': darkIsEnabled }">
+                <h3 class = "colored__h3">В работе ({{ schedule[1] }})</h3>
+                <ul
+                @drop='onDrop($event, "in-work")' 
+                @dragover.prevent
+                @dragenter.prevent>
+                  <li 
+                  v-for='(item, index) in plan_array'
+                  v-if = "item.tag == 'in-work'"
+                  v-bind:class = "{ 'dark__content': darkIsEnabled }" 
+                  class = "trans" 
+                  :key='item.description' 
+                  draggable
+                  @dragstart='startDrag($event, item)'>
+                    <h3 class = "bold lightblue__color">{{ item.title }}</h3>
+                    <p class = "another__color edit__font">{{ item.description }}</p>
+                    <p class = "bold">Дата и время начала:</p>
+                    <p class = "another__color edit__font">{{ item.time }}</p>
+                    <p class = "bold">Создатель:</p>
+                    <p class = "another__color edit__font">{{ item.name }}</p>
+                    <div class = "sub__menu trans" v-bind:class = "{ 'dark-sub__menu': darkIsEnabled }">
+                      <i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" v-on:click = "edit_app_block(index)"></i>
+                      <i class="fa fa-check-circle-o fa-2x" aria-hidden="true" v-on:click = "ready_button(index)"></i>
+                    </div>
+                </ul>
+              </div>
+              <div class = "ended__content outline__block trans" v-bind:class = "{ 'dark__block': darkIsEnabled }">
+                <h3 class = "colored__h3">Завершено ({{ schedule[2] }})</h3>
+                <ul
+                @drop='onDrop($event, "ended")' 
+                @dragover.prevent
+                @dragenter.prevent>
+                  <li 
+                  v-for='(item, index) in plan_array'
+                  v-if = "item.tag == 'ended'"
+                  v-bind:class = "{ 'dark__content': darkIsEnabled }" 
+                  class = "trans" 
+                  :key='item.description' 
+                  draggable
+                  @dragstart='startDrag($event, item)'
+                  >
+                    <h3 class = "bold lightblue__color">{{ item.title }}</h3>
+                    <p class = "another__color edit__font">{{ item.description }}</p>
+                    <p class = "bold">Дата и время начала:</p>
+                    <p class = "another__color edit__font">{{ item.time }}</p>
+                    <p class = "bold">Потрачено времени:</p>
+                    <p class = "another__color edit__font time__left">{{ item.time_of_work }}</p>
+                    <p class = "bold">Создатель:</p>
+                    <p class = "another__color edit__font">{{ item.name }}</p>
+                    <div class = "sub__menu trans" v-bind:class = "{ 'dark-sub__menu': darkIsEnabled }">
+                      <i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" v-on:click = "edit_app_block(index)"></i>
+                      <i class="fa fa-times-circle-o fa-2x" aria-hidden="true" v-on:click = "delete_app_block(index)"></i>
+                    </div>
+                  </li>
+                </ul>
+              </div>
         </main>
     </div>
     <script src="script.js"></script>

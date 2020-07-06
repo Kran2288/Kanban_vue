@@ -30,7 +30,7 @@ function objects(title, description, time, time_of_work, name, tag, data, id){
       dif_id: 0,
       darkIsEnabled: true,
       darkText: true,
-      theme_naming: ["Светлая тема", "Темная тема"],
+      theme_naming: ["Сменить тему", "Сменить тему"],
       selected_id: 0,
       check_box: 0,
       schedule: [0, 0, 0],

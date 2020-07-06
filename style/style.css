@@ -141,11 +141,11 @@
     color: #2699fb;
   }
   .another__color{
-    color: #72bdfc;
+    color: #070a0c;
   }
   .bold{
     font-weight: bold;
-    color: #2699fb;
+    color: #010203;
     font-size: 14px;
   }
   .edit__font{
@@ -169,6 +169,7 @@
     padding-left: 10px;
     min-width: 170px;
     min-height: 175px;
+    max-width: 190px;
     background-color: #f1f9ff;
     list-style: none;
     position: relative;
@@ -287,7 +288,7 @@
     color: #2699fb;
   }
   #sel{
-    border: 1.5px solid #bce0fd;
+    border: 1.5px solid #000000;
     font-size: 12px;
     color: rgb(85, 106, 165);
     background-color: #fff1f1;
@@ -305,7 +306,7 @@
     justify-content: flex-end;
     align-items: center;
     margin-left: 6vw;
-    color: #2699fb;
+    color: #000000;
   }
   .fa-check-circle-o,.fa-times-circle-o {
     margin-left: 5px;
@@ -461,7 +462,7 @@
     justify-content: space-around;
     flex-direction: column;
     min-height: 10vw;
-    background-color: lightgray;
+    background-color: rgb(250, 133, 0);
     padding: 30px;
     position: absolute;
     border-radius: 20px;
@@ -476,7 +477,8 @@
     padding: 5px;
     position: relative;
     border: 1px solid white;
-    color: red;
+    color: rgb(0, 0, 0);
+    font-size:18px;
   }
   .normal__pos{
     display: flex;

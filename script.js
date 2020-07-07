@@ -48,18 +48,9 @@ function objects(title, description, time, time_of_work, name, tag, data, id){
       },
       checkTextInInput: function(search){
         if(search != '' || search != " "){
-          // this.windowVisibility = !this.windowVisibility
           this.search = search
           this.userNameBoolevo = !this.userNameBoolevo
         }
-      },
-      reset_input: function(){
-        this.search =  '',
-        this.description = '',
-        this.status = '',
-        this.sponsor = '',
-        this.start = '',
-        this.end = ''
       },
       add_data_to_array: function(desc, status, sponsor, start, end){
         if((status == 'plan' || status == 'in-work' || status == 'ended') && this.editable == false){

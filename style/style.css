@@ -99,6 +99,8 @@
     width: 200px;
     outline: none;
   }
+    
+  /* Switch theme */
   .switch-theme__button{
     display: flex;
     justify-content: space-around;

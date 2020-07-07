@@ -2,14 +2,10 @@ function objects(title, description, time, time_of_work, name, tag, data, id){
     return{
       title, description, time, time_of_work, name, tag, data, id
     }
-  }
+}
   
-  const plan_array = [
-    // objects("Task 1", "description", "time", "time_of_work", "name", "plan"),
-    // objects("Task 2", "description", "time", "time_of_work", "name", "in-work"),
-    // objects("Task 3", "description", "time", "time_of_work", "name", "in-work"),
-    // objects("Task 4", "description", "time", "time_of_work", "name", "ended")
-  ]
+  const plan_array = [   
+]
   
   new Vue({
     el: "#app",
@@ -73,6 +69,7 @@ function objects(title, description, time, time_of_work, name, tag, data, id){
             this.windowVisibility = !this.windowVisibility
             this.shell()
         }
+        // Отвечает за кнопку с изменениями задачи 
         else if((status == 'plan' || status == 'in-work' || status == 'ended') && this.editable == true){
                   for(let i = 0; i < this.plan_array.length; i++){
                     if(this.plan_array[i]["id"].includes(this.selected_id)){
@@ -81,7 +78,7 @@ function objects(title, description, time, time_of_work, name, tag, data, id){
                       this.plan_array[i]["time_of_work"] = this.end
                       this.plan_array[i]["name"] = this.sponsor
                       this.plan_array[i]["tag"] = this.status
-                    }
+                    }                                                  
                   }
                   this.windowVisibility = !this.windowVisibility
                   this.reset_input()

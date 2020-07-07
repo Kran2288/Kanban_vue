@@ -12,6 +12,51 @@
     width: 100%;
     min-height: 100vh;
   }
+
+  /* REG FORM */
+  .reg__form{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    min-height: 10vw;
+    background-color: rgb(250, 133, 0);
+    padding: 30px;
+    position: absolute;
+    border-radius: 20px;
+    z-index: 99999;
+    border: 2px solid lightgray;
+  }
+  .reg__form input{
+    border: 0;
+    background: none;
+    outline: none;
+    width: 15vw;
+    padding: 5px;
+    position: relative;
+    border: 1px solid white;
+    color: rgb(0, 0, 0);
+    font-size:18px;
+  }
+  .normal__pos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+  }
+  .btn__mode{
+    background: rgb(209, 201, 185) !important;
+    border: 0;
+    height: 55px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: .5s;
+  }
+  .null-kek{
+    display: none;
+  }
+
+      /* Head */
   header{
     display: flex;
     width: 100%;
@@ -110,7 +155,7 @@
   }
   
   
-  
+      /* Main */
   main{
     display: flex;
     justify-content: space-around;
@@ -228,7 +273,8 @@
   .second{
     filter: blur(20px);
   }
-  /* ANIMATE */
+  
+        /* ANIMATE */
   @keyframes animate{
     0%{
       background-position: 0 0;
@@ -270,16 +316,16 @@
     outline: none;
   }
   .flex__container button{
-    /* background: #2699fb; */
     background: none;
     border: 0;
-    /* border-radius: 5px; */
     height: 35px;
     cursor: pointer;
     position: relative;
     overflow: hidden;
   }
-  /* -----BUTTON-MODAL-WINDOW----- */
+  
+  
+      /*BUTTON-MODAL-WINDOW*/
   
   .fa-times{
     color: #2699fb;
@@ -322,7 +368,7 @@
   }
   
   
-  /* -----DARK MODE------ */
+        /* DARK MODE */
   .dark__theme{
     min-height: 100vh;
   }
@@ -358,21 +404,22 @@
   .dark__mode i{
     color: #eca31c;
   }
-  /* ----ANIMATED DARK BUTTON---- */
+  
+        /*ANIMATED DARK BUTTON */
   .dark-btn__mode i{
     color: #344064 !important;
   }
   .dark-btn__mode{
-    /* background: #2699fb; */
     background: rgb(114, 114, 114) !important;
     border: 0;
-    /* border-radius: 5px; */
     height: 105px;
     cursor: pointer;
     position: relative;
     overflow: hidden;
   }
-  /* -----BUTTON-MODAL-WINDOW----- */
+  
+  
+    /*BUTTON-MODAL-WINDOW*/
   
   .dark__color{
     color: black !important;
@@ -439,7 +486,7 @@
     background: linear-gradient(231deg, #4aaeff, #060c21, #00bcd4);
   }
   
-  /* -----ANIMATIONS------ */
+      /*ANIMATIONS*/
   
   .dark__hover:hover{
     color: #4a5577;
@@ -456,47 +503,3 @@
   
   
   
-  /* -----------REG FORM----------- */
-  .reg__form{
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    min-height: 10vw;
-    background-color: rgb(250, 133, 0);
-    padding: 30px;
-    position: absolute;
-    border-radius: 20px;
-    z-index: 99999;
-    border: 2px solid lightgray;
-  }
-  .reg__form input{
-    border: 0;
-    background: none;
-    outline: none;
-    width: 15vw;
-    padding: 5px;
-    position: relative;
-    border: 1px solid white;
-    color: rgb(0, 0, 0);
-    font-size:18px;
-  }
-  .normal__pos{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  
-  }
-  .btn__mode{
-    /* background: #2699fb; */
-    background: rgb(209, 201, 185) !important;
-    border: 0;
-    /* border-radius: 5px; */
-    height: 55px;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    transition: .5s;
-  }
-  .null-kek{
-    display: none;
-  }
